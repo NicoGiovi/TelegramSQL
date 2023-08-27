@@ -33,3 +33,5 @@ The general idea is for the script system to capture alerts from Telegram groups
 -1 if the alert reached a stop loss.
 And 1, 2, 3 if the alert reached the different take profits (TPs).
 
+# TelegramSQL Pt 2
+In this second part, we added the file AlertTester.py. This file is designed to run in a secondary thread or a parallel process. Its purpose is to find alerts with a state of 0 and retrieve candles for each symbol. It fetches 5-minute candles for the next 24 hours starting from the alert time. Then, it compares the take profit and stop loss values with the highs and lows of each candle. This comparison is done to assign the appropriate state and update it in the database.
